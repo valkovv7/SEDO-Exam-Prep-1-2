@@ -9,7 +9,7 @@ pipeline{
                 }
             }
             steps{
-                bat 'dotnet restore'
+                sh 'dotnet restore'
             }
         }
         stage("Build the app"){
@@ -20,7 +20,7 @@ pipeline{
                 }
             }
             steps{
-                bat 'dotnet build --no-restore'
+                sh 'dotnet build --no-restore'
             }
         }
         stage("Run the tests"){
@@ -31,7 +31,7 @@ pipeline{
                 }
             }
             steps{
-                bat 'dotnet test --no-build --verbosity normal'
+                sh 'dotnet test --no-build --verbosity normal'
             }
         }
     }
